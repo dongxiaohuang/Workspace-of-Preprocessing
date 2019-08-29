@@ -3,6 +3,17 @@
 ## Dataset for training
 + https://keras.io/zh/datasets/
 
+# Preprocessing
+
++ A First-level folder for Preprocessing, contains Data Augmentation, Data Clean, Data Translate, Data Visualization
+
+  | Data Annotator  | Data Augmentation | Data Clean | Data Translate | Data Visualizaiton |
+  | --------------- | ----------------- | ---------- | -------------- | ------------------ |
+  | BRAT            | Over Sampling     | punction   |                |                    |
+  | Active Learning | Under Sampling    | stop-words |                |                    |
+  |                 | Data-Generation   | vocablary  |                |                    |
+  |                 |                   |            |                |                    |
+
 ## Reference
 ### 小样本不平衡样本
 - 训练一个有效的神经网络，通常需要大量的样本以及均衡的样本比例，但实际情况中，我们容易的获得的数据往往是小样本以及类别不平衡的，比如银行交易中的fraud detection和医学图像中的数据。前者绝大部分是正常的交易，只有少量的是fraudulent transactions；后者大部分人群中都是健康的，仅有少数是患病的。因此，如何在这种情况下训练出一个好的神经网络，是一个重要的问题。
