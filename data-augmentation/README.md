@@ -137,6 +137,12 @@
 + 特殊的过采样
 
   + <https://blog.csdn.net/u014535908/article/details/79035653>
+  
+
+## UDA 无监督数据扩充
++ https://github.com/google-research/uda
++ https://github.com/google-research/bert
++ Unsupervised Data Augmentation for Consistency Training [pdf](https://arxiv.org/abs/1904.12848)
 
 
 

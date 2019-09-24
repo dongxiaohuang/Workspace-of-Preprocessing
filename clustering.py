@@ -4,9 +4,6 @@
 # In[1]:
 
 
-# https://www.ioiogoo.cn/2018/05/31/%e4%bd%bf%e7%94%a8k-means%e5%8f%8atf-idf%e7%ae%97%e6%b3%95%e5%af%b9%e4%b8%ad%e6%96%87%e6%96%87%e6%9c%ac%e8%81%9a%e7%b1%bb%e5%b9%b6%e5%8f%af%e8%a7%86%e5%8c%96/
-
-
 # In[3]:
 
 
@@ -132,6 +129,10 @@ for index, label in enumerate(kmeans.labels_, 0):
         result_dict[label] = [corpus[index]]
 
 print(result_dict)
+
+for key, value in result_dict.items():
+    print("key : {}, number {}".format(key, len(value)))
+
 # print(result_dict[0])
 # print(result_dict[1])
  
