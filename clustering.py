@@ -14,10 +14,6 @@ from sklearn.cluster import KMeans
 import jieba
 import matplotlib.pyplot as plt
 
-
-# In[4]:
-
-
 # bigram分词
 # segment_bigram = lambda text: " ".join([word + text[idx + 1] for idx, word in enumerate(text) if idx &lt; len(text) - 1])
 # 结巴中文分词
@@ -27,36 +23,13 @@ segment_jieba = lambda text: " ".join(jieba.cut(text))
 加载语料
 '''
 corpus = []
-with open("demo_1.txt", "r", encoding="utf-8") as f:
+with open("/export/home/sunhongchao1/1-NLU/data_3.txt", "r", encoding="utf-8") as f:
     for line in f:
         line = line.strip()
         # print(">>>", line)
         tmp = segment_jieba(line)
         # print(tmp)
         corpus.append(tmp)
- 
-
-
-# In[5]:
-
-
-# corpus = [
-# ...     'This is the first document.',
-# ...     'This is the second second document.',
-# ...     'And the third one.',
-# ...     'Is this the first document?',
-# ... ]
-# vectorizer = CountVectorizer()
-# transformer = TfidfTransformer()
-# X = vectorizer.fit_transform(corpus)
-
-# print(vectorizer.get_feature_names())
-# print(X)
-# print(transformer.fit_transform(X))
-
-
-# In[6]:
-
 
 '''
 计算tf-idf设为权重
@@ -64,11 +37,6 @@ with open("demo_1.txt", "r", encoding="utf-8") as f:
 vectorizer = CountVectorizer()
 transformer = TfidfTransformer()
 tfidf = transformer.fit_transform(vectorizer.fit_transform(corpus))
-# print(tfidf[:50])
-
-
-# In[7]:
-
 
 ''' 
 获取词袋模型中的所有词语特征
@@ -76,39 +44,12 @@ tfidf = transformer.fit_transform(vectorizer.fit_transform(corpus))
 '''
 word = vectorizer.get_feature_names()
 
-
-# In[8]:
-
-
-''' 
-导出权重，到这边就实现了将文字向量化的过程，矩阵中的每一行就是一个文档的向量表示
-'''
-tfidf_weight = tfidf.toarray()
-
-
-# In[9]:
-
-
-SSE = []  # 存放每次结果的误差平方和
-for k in range(1,50):
-    estimator = KMeans(n_clusters=k)  # 构造聚类器
-    estimator.fit(tfidf_weight)
-    SSE.append(estimator.inertia_)
-X = range(1,50)
-plt.xlabel('k')
-plt.ylabel('SSE')
-plt.plot(X,SSE,'o-')
-
-
-# In[13]:
-
-
 # 聚类
 import math
 n_clusters=int(math.sqrt(len(corpus)/2))
 print("n_clusters is ", n_clusters)
 kmeans = KMeans(n_clusters)
-kmeans.fit(tfidf_weight)
+kmeans.fit(tfidf)
 
 # 显示聚类结果
 # print(kmeans.cluster_centers_)
@@ -129,36 +70,13 @@ for index, label in enumerate(kmeans.labels_, 0):
         result_dict[label] = [corpus[index]]
 
 print(result_dict)
+<<<<<<< HEAD
 
 for key, value in result_dict.items():
     print("key : {}, number {}".format(key, len(value)))
 
 # print(result_dict[0])
 # print(result_dict[1])
+=======
+>>>>>>> bad67427c53cb9ebb6a6297cd40de4a2a2bca8a5
  
-# 样本距其最近的聚类中心的平方距离之和，用来评判分类的准确度，值越小越好
-# k-means的超参数n_clusters可以通过该值来评估
-# print("inertia: {}".format(kmeans.inertia_))
-
-# '''
-# 可视化
-# '''
-# # 使用T-SNE算法，对权重进行降维，准确度比PCA算法高，但是耗时长
-# tsne = TSNE(n_components=2) # 降低到2维度，方便显示
-# decomposition_data = tsne.fit_transform(tfidf_weight)
- 
-# x = []
-# y = []
- 
-# for i in decomposition_data:
-#     x.append(i[0])
-#     y.append(i[1])
- 
-# fig = plt.figure(figsize=(10, 10))
-# ax = plt.axes()
-# plt.scatter(x, y, c=kmeans.labels_, marker="x")
-# plt.xticks(())
-# plt.yticks(())
-# # plt.show()
-# plt.savefig('./sample.png', aspect=1)
-

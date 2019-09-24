@@ -128,7 +128,10 @@
 
 ## 改变loss
 
-+ Weighted loss function，一个处理非平衡数据常用的方法就是设置损失函数的权重，使得少数类判别错误的损失大于多数类判别错误的损失。在python的sk-learn中我们可以使用class_weight参数来设置权重，提高少数类权重，例如设置为多数类的10倍。
++ weighted cross entropy
+
++ Focal loss
+  Weighted loss function，一个处理非平衡数据常用的方法就是设置损失函数的权重，使得少数类判别错误的损失大于多数类判别错误的损失。在python的sk-learn中我们可以使用class_weight参数来设置权重，提高少数类权重，例如设置为多数类的10倍。
 
   RBG和Kaiming给出的相当牛逼的方法，这里不做详细介绍。 
 
