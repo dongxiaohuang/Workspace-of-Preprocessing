@@ -70,13 +70,10 @@ for index, label in enumerate(kmeans.labels_, 0):
         result_dict[label] = [corpus[index]]
 
 print(result_dict)
-<<<<<<< HEAD
 
 for key, value in result_dict.items():
     print("key : {}, number {}".format(key, len(value)))
 
 # print(result_dict[0])
 # print(result_dict[1])
-=======
->>>>>>> bad67427c53cb9ebb6a6297cd40de4a2a2bca8a5
- 
+
