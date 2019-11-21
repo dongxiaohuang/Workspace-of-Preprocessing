@@ -1,25 +1,16 @@
-<!--
- * @Author: your name
- * @Date: 2019-09-05 19:08:46
- * @LastEditTime: 2019-11-08 16:28:34
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /craft/Zero-of-Preprocessing/README.md
- -->
-
 <!-- TOC -->
 
-1. [Dataset for training](#dataset-for-training)
-2. [Preprocessing](#preprocessing)
-3. [Pipeline](#pipeline)
-4. [Out of Memory](#out-of-memory)
-5. [Reference](#reference)
-        1. [小样本不平衡样本](#小样本不平衡样本)
-        2. [View of Corpus too big](#view-of-corpus-too-big)
-        3. [使用无监督和半监督来减少标注](#使用无监督和半监督来减少标注)
-        4. [结构化数据标记](#结构化数据标记)
-        5. [Schema.org](#schemaorg)
-        6. [Data Format](#data-format)
+- [Dataset for training](#dataset-for-training)
+- [Preprocessing](#preprocessing)
+- [Pipeline](#pipeline)
+- [Out of Memory](#out-of-memory)
+- [Reference](#reference)
+        - [小样本不平衡样本](#小样本不平衡样本)
+        - [View of Corpus too big](#view-of-corpus-too-big)
+        - [使用无监督和半监督来减少标注](#使用无监督和半监督来减少标注)
+        - [结构化数据标记](#结构化数据标记)
+        - [Schema.org](#schemaorg)
+        - [Data Format](#data-format)
 
 <!-- /TOC -->
 
