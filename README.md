@@ -1,5 +1,7 @@
 <!-- TOC -->
 
+- [Target](#target)
+- [Todo list](#todo-list)
 - [Dataset for training](#dataset-for-training)
 - [Preprocessing](#preprocessing)
 - [Pipeline](#pipeline)
@@ -13,6 +15,13 @@
         - [Data Format](#data-format)
 
 <!-- /TOC -->
+
+# Target
++ 整理通用的预处理功能
+
+# Todo list
++ utils for ohers work
+
 
 # Dataset for training
 + https://keras.io/zh/datasets/
